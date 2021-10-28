@@ -3,9 +3,21 @@ from tkinter import *
 
 window = Tk()
 window.title("Tic-Tac-Toe")
-window.minsize(width=210, height=260)
-window.maxsize(width=210, height=260)
+window.minsize(width=215, height=350)
+window.maxsize(width=215, height=350)
 
+
+x_player = Button(text="X", width=7, height=1)
+x_player.grid(column=1, row=3)
+
+first_player = Label(text="Player 1", width=7, height=2)
+first_player.grid(column=0, row=3)
+
+o_player = Button(text="O", width=7, height=1)
+o_player.grid(column=1, row=4)
+
+second_player = Label(text="Player 2", width=7, height=2)
+second_player.grid(column=0, row=4)
 
 first_button = Button(text="", width=7, height=5, highlightthickness=2, fg='black')
 first_button.grid(column=0, row=0)
