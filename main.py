@@ -8,6 +8,7 @@ window.title("Tic-Tac-Toe")
 window.minsize(width=215, height=350)
 window.maxsize(width=215, height=350)
 
+global clicked
 clicked = True
 
 
@@ -16,7 +17,7 @@ def button_clicked(button):
     if button['text'] == '' and clicked is True:
         button['text'] = "X"
         clicked = False
-    elif button['text'] == ' ' and clicked is False:
+    elif clicked is False:
         button['text'] = "O"
         clicked = True
 
