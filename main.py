@@ -16,10 +16,18 @@ def button_clicked(button):
     global clicked
     if button['text'] == '' and clicked is True:
         button['text'] = "X"
+        button['state'] = 'disabled'
+        button['fg'] = 'red'
+        button['disabledforeground'] = 'red'
         clicked = False
     elif clicked is False:
         button['text'] = "O"
+        button['state'] = 'disabled'
+        button['fg'] = 'blue'
+        button['disabledforeground'] = 'blue'
         clicked = True
+
+#ADD LOGIC ABOUT HOW THE GAME IS WON
 
 
 x_player = Button(text="X",  fg='red', width=7, height=1)
