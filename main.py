@@ -92,6 +92,20 @@ def play_again():
     else:
         messagebox.showinfo("Thank You!", "Thank you for playing!")
 
+    enable_buttons()
+
+
+def enable_buttons():
+    first_button['state'] = "enabled"
+    second_button['state'] = "enabled"
+    third_button['state'] = "enabled"
+    fourth_button['state'] = "enabled"
+    fifth_button['state'] = "enabled"
+    sixth_button['state'] = "enabled"
+    seventh_button['state'] = "enabled"
+    eight_button['state'] = "enabled"
+    ninth_button['state'] = "enabled"
+
 
 x_player = Button(text="X",  fg='red', width=7, height=1)
 x_player.grid(column=1, row=3)
