@@ -8,29 +8,40 @@ window.title("Tic-Tac-Toe")
 window.minsize(width=215, height=350)
 window.maxsize(width=215, height=350)
 
-global clicked
-global answer
+global clicked, answer, counter
+counter = 0
 answer = False
 clicked = True
 
 
 def button_clicked(button):
-    global clicked
-    global answer
+    global clicked, answer, counter
     if button['text'] == '' and clicked is True:
         button['text'] = "X"
         button['state'] = 'disabled'
         button['fg'] = 'red'
         button['disabledforeground'] = 'red'
         clicked = False
+        counter += 1
     elif clicked is False:
         button['text'] = "O"
         button['state'] = 'disabled'
         button['fg'] = 'blue'
         button['disabledforeground'] = 'blue'
         clicked = True
+        counter += 1
 
-    game_win()
+
+    print(counter)
+    if counter > 8 and clicked is False:
+        messagebox.showinfo("Tie Game", "It's A Tie!")
+        answer = messagebox.askyesno("Play Again?", "Want to play again?")
+        play_again()
+        clicked = True
+    else:
+        game_win()
+
+
 
 
 def game_win():
@@ -61,6 +72,16 @@ def game_win():
         answer = messagebox.askyesno("Play Again?", "Want to play again?")
         play_again()
         clicked = True
+    elif fourth_button['text'] == "X" and fifth_button['text'] == "X" and sixth_button['text'] == "X":
+        messagebox.showinfo("We Got A Winner", "Player 1 Wins!!!")
+        answer = messagebox.askyesno("Play Again?", "Want to play again?")
+        play_again()
+        clicked = True
+    elif third_button['text'] == "X" and sixth_button['text'] == "X" and ninth_button['text'] == "X":
+        messagebox.showinfo("We Got A Winner", "Player 1 Wins!!!")
+        answer = messagebox.askyesno("Play Again?", "Want to play again?")
+        play_again()
+        clicked = True
     elif seventh_button['text'] == "X" and eight_button['text'] == "X" and ninth_button['text'] == "X":
         messagebox.showinfo("We Got A Winner", "Player 1 Wins!!!")
         answer = messagebox.askyesno("Play Again?", "Want to play again?")
@@ -86,6 +107,16 @@ def game_win():
         answer = messagebox.askyesno("Play Again?", "Want to play again?")
         play_again()
         clicked = True
+    elif fourth_button['text'] == "O" and fifth_button['text'] == "O" and sixth_button['text'] == "O":
+        messagebox.showinfo("We Got A Winner", "Player 2 Wins!!!")
+        answer = messagebox.askyesno("Play Again?", "Want to play again?")
+        play_again()
+        clicked = True
+    elif third_button['text'] == "O" and sixth_button['text'] == "O" and ninth_button['text'] == "O":
+        messagebox.showinfo("We Got A Winner", "Player 2 Wins!!!")
+        answer = messagebox.askyesno("Play Again?", "Want to play again?")
+        play_again()
+        clicked = True
     elif third_button['text'] == "O" and fifth_button['text'] == "O" and seventh_button['text'] == "O":
         messagebox.showinfo("We Got A Winner", "Player 2 Wins!!!")
         answer = messagebox.askyesno("Play Again?", "Want to play again?")
@@ -96,7 +127,6 @@ def game_win():
         answer = messagebox.askyesno("Play Again?", "Want to play again?")
         play_again()
         clicked = True
-
 
 
 def play_again():
