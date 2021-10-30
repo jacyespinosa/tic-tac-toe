@@ -35,46 +35,68 @@ def button_clicked(button):
 
 def game_win():
     global answer
+    global clicked
     if first_button['text'] == "X" and second_button['text'] == "X" and third_button['text'] == "X":
         messagebox.showinfo("We Got A Winner", "Player 1 Wins!!!")
         answer = messagebox.askyesno("Play Again?", "Want to play again?")
         play_again()
+        clicked = True
     elif first_button['text'] == "X" and fourth_button['text'] == "X" and seventh_button['text'] == "X":
         messagebox.showinfo("We Got A Winner", "Player 1 Wins!!!")
         answer = messagebox.askyesno("Play Again?", "Want to play again?")
         play_again()
+        clicked = True
     elif first_button['text'] == "X" and fifth_button['text'] == "X" and ninth_button['text'] == "X":
         messagebox.showinfo("We Got A Winner", "Player 1 Wins!!!")
         answer = messagebox.askyesno("Play Again?", "Want to play again?")
         play_again()
+        clicked = True
     elif second_button['text'] == "X" and fifth_button['text'] == "X" and eight_button['text'] == "X":
         messagebox.showinfo("We Got A Winner", "Player 1 Wins!!!")
         answer = messagebox.askyesno("Play Again?", "Want to play again?")
         play_again()
+        clicked = True
     elif third_button['text'] == "X" and fifth_button['text'] == "X" and seventh_button['text'] == "X":
         messagebox.showinfo("We Got A Winner", "Player 1 Wins!!!")
         answer = messagebox.askyesno("Play Again?", "Want to play again?")
         play_again()
+        clicked = True
+    elif seventh_button['text'] == "X" and eight_button['text'] == "X" and ninth_button['text'] == "X":
+        messagebox.showinfo("We Got A Winner", "Player 1 Wins!!!")
+        answer = messagebox.askyesno("Play Again?", "Want to play again?")
+        play_again()
+        clicked = True
     elif first_button['text'] == "O" and second_button['text'] == "O" and third_button['text'] == "O":
         messagebox.showinfo("We Got A Winner", "Player 2 Wins!!!")
         answer = messagebox.askyesno("Play Again?", "Want to play again?")
         play_again()
+        clicked = True
     elif first_button['text'] == "O" and fourth_button['text'] == "O" and seventh_button['text'] == "O":
         messagebox.showinfo("We Got A Winner", "Player 2 Wins!!!")
         answer = messagebox.askyesno("Play Again?", "Want to play again?")
         play_again()
+        clicked = True
     elif first_button['text'] == "O" and fifth_button['text'] == "O" and ninth_button['text'] == "O":
         messagebox.showinfo("We Got A Winner", "Player 2 Wins!!!")
         answer = messagebox.askyesno("Play Again?", "Want to play again?")
         play_again()
+        clicked = True
     elif second_button['text'] == "O" and fifth_button['text'] == "O" and eight_button['text'] == "O":
         messagebox.showinfo("We Got A Winner", "Player 2 Wins!!!")
         answer = messagebox.askyesno("Play Again?", "Want to play again?")
         play_again()
+        clicked = True
     elif third_button['text'] == "O" and fifth_button['text'] == "O" and seventh_button['text'] == "O":
         messagebox.showinfo("We Got A Winner", "Player 2 Wins!!!")
         answer = messagebox.askyesno("Play Again?", "Want to play again?")
         play_again()
+        clicked = True
+    elif seventh_button['text'] == "O" and eight_button['text'] == "O" and ninth_button['text'] == "O":
+        messagebox.showinfo("We Got A Winner", "Player 2 Wins!!!")
+        answer = messagebox.askyesno("Play Again?", "Want to play again?")
+        play_again()
+        clicked = True
+
 
 
 def play_again():
@@ -96,15 +118,15 @@ def play_again():
 
 
 def enable_buttons():
-    first_button['state'] = "enabled"
-    second_button['state'] = "enabled"
-    third_button['state'] = "enabled"
-    fourth_button['state'] = "enabled"
-    fifth_button['state'] = "enabled"
-    sixth_button['state'] = "enabled"
-    seventh_button['state'] = "enabled"
-    eight_button['state'] = "enabled"
-    ninth_button['state'] = "enabled"
+    first_button['state'] = "normal"
+    second_button['state'] = "normal"
+    third_button['state'] = "normal"
+    fourth_button['state'] = "normal"
+    fifth_button['state'] = "normal"
+    sixth_button['state'] = "normal"
+    seventh_button['state'] = "normal"
+    eight_button['state'] = "normal"
+    ninth_button['state'] = "normal"
 
 
 x_player = Button(text="X",  fg='red', width=7, height=1)
