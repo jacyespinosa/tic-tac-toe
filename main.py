@@ -31,102 +31,47 @@ def button_clicked(button):
         clicked = True
         counter += 1
 
+    game_win()
 
-    print(counter)
+
+def game_win():
+    global answer, clicked, counter
+    if (first_button['text'] == "X" and second_button['text'] == "X" and third_button['text'] == "X") or \
+       (first_button['text'] == "X" and fourth_button['text'] == "X" and seventh_button['text'] == "X") or \
+       (first_button['text'] == "X" and fifth_button['text'] == "X" and ninth_button['text'] == "X") or \
+       (second_button['text'] == "X" and fifth_button['text'] == "X" and eight_button['text'] == "X") or \
+       (third_button['text'] == "X" and fifth_button['text'] == "X" and seventh_button['text'] == "X") or \
+       (fourth_button['text'] == "X" and fifth_button['text'] == "X" and sixth_button['text'] == "X") or \
+       (third_button['text'] == "X" and sixth_button['text'] == "X" and ninth_button['text'] == "X") or \
+       (seventh_button['text'] == "X" and eight_button['text'] == "X" and ninth_button['text'] == "X"):
+
+            messagebox.showinfo("We Got A Winner", "Player 1 Wins!!!")
+            answer = messagebox.askyesno("Play Again?", "Want to play again?")
+            play_again()
+            clicked = True
+            counter = 0
+
+    elif (first_button['text'] == "O" and second_button['text'] == "O" and third_button['text'] == "O") or \
+         (first_button['text'] == "O" and fourth_button['text'] == "O" and seventh_button['text'] == "O") or \
+         (first_button['text'] == "O" and fifth_button['text'] == "O" and ninth_button['text'] == "O") or \
+         (second_button['text'] == "O" and fifth_button['text'] == "O" and eight_button['text'] == "O") or \
+         (fourth_button['text'] == "O" and fifth_button['text'] == "O" and sixth_button['text'] == "O") or \
+         (third_button['text'] == "O" and sixth_button['text'] == "O" and ninth_button['text'] == "O") or \
+         (third_button['text'] == "O" and fifth_button['text'] == "O" and seventh_button['text'] == "O") or \
+         (seventh_button['text'] == "O" and eight_button['text'] == "O" and ninth_button['text'] == "O"):
+
+            messagebox.showinfo("We Got A Winner", "Player 2 Wins!!!")
+            answer = messagebox.askyesno("Play Again?", "Want to play again?")
+            play_again()
+            clicked = True
+            counter = 0
+
     if counter > 8 and clicked is False:
         messagebox.showinfo("Tie Game", "It's A Tie!")
         answer = messagebox.askyesno("Play Again?", "Want to play again?")
         play_again()
         clicked = True
-    else:
-        game_win()
-
-
-
-
-def game_win():
-    global answer
-    global clicked
-    if first_button['text'] == "X" and second_button['text'] == "X" and third_button['text'] == "X":
-        messagebox.showinfo("We Got A Winner", "Player 1 Wins!!!")
-        answer = messagebox.askyesno("Play Again?", "Want to play again?")
-        play_again()
-        clicked = True
-    elif first_button['text'] == "X" and fourth_button['text'] == "X" and seventh_button['text'] == "X":
-        messagebox.showinfo("We Got A Winner", "Player 1 Wins!!!")
-        answer = messagebox.askyesno("Play Again?", "Want to play again?")
-        play_again()
-        clicked = True
-    elif first_button['text'] == "X" and fifth_button['text'] == "X" and ninth_button['text'] == "X":
-        messagebox.showinfo("We Got A Winner", "Player 1 Wins!!!")
-        answer = messagebox.askyesno("Play Again?", "Want to play again?")
-        play_again()
-        clicked = True
-    elif second_button['text'] == "X" and fifth_button['text'] == "X" and eight_button['text'] == "X":
-        messagebox.showinfo("We Got A Winner", "Player 1 Wins!!!")
-        answer = messagebox.askyesno("Play Again?", "Want to play again?")
-        play_again()
-        clicked = True
-    elif third_button['text'] == "X" and fifth_button['text'] == "X" and seventh_button['text'] == "X":
-        messagebox.showinfo("We Got A Winner", "Player 1 Wins!!!")
-        answer = messagebox.askyesno("Play Again?", "Want to play again?")
-        play_again()
-        clicked = True
-    elif fourth_button['text'] == "X" and fifth_button['text'] == "X" and sixth_button['text'] == "X":
-        messagebox.showinfo("We Got A Winner", "Player 1 Wins!!!")
-        answer = messagebox.askyesno("Play Again?", "Want to play again?")
-        play_again()
-        clicked = True
-    elif third_button['text'] == "X" and sixth_button['text'] == "X" and ninth_button['text'] == "X":
-        messagebox.showinfo("We Got A Winner", "Player 1 Wins!!!")
-        answer = messagebox.askyesno("Play Again?", "Want to play again?")
-        play_again()
-        clicked = True
-    elif seventh_button['text'] == "X" and eight_button['text'] == "X" and ninth_button['text'] == "X":
-        messagebox.showinfo("We Got A Winner", "Player 1 Wins!!!")
-        answer = messagebox.askyesno("Play Again?", "Want to play again?")
-        play_again()
-        clicked = True
-    elif first_button['text'] == "O" and second_button['text'] == "O" and third_button['text'] == "O":
-        messagebox.showinfo("We Got A Winner", "Player 2 Wins!!!")
-        answer = messagebox.askyesno("Play Again?", "Want to play again?")
-        play_again()
-        clicked = True
-    elif first_button['text'] == "O" and fourth_button['text'] == "O" and seventh_button['text'] == "O":
-        messagebox.showinfo("We Got A Winner", "Player 2 Wins!!!")
-        answer = messagebox.askyesno("Play Again?", "Want to play again?")
-        play_again()
-        clicked = True
-    elif first_button['text'] == "O" and fifth_button['text'] == "O" and ninth_button['text'] == "O":
-        messagebox.showinfo("We Got A Winner", "Player 2 Wins!!!")
-        answer = messagebox.askyesno("Play Again?", "Want to play again?")
-        play_again()
-        clicked = True
-    elif second_button['text'] == "O" and fifth_button['text'] == "O" and eight_button['text'] == "O":
-        messagebox.showinfo("We Got A Winner", "Player 2 Wins!!!")
-        answer = messagebox.askyesno("Play Again?", "Want to play again?")
-        play_again()
-        clicked = True
-    elif fourth_button['text'] == "O" and fifth_button['text'] == "O" and sixth_button['text'] == "O":
-        messagebox.showinfo("We Got A Winner", "Player 2 Wins!!!")
-        answer = messagebox.askyesno("Play Again?", "Want to play again?")
-        play_again()
-        clicked = True
-    elif third_button['text'] == "O" and sixth_button['text'] == "O" and ninth_button['text'] == "O":
-        messagebox.showinfo("We Got A Winner", "Player 2 Wins!!!")
-        answer = messagebox.askyesno("Play Again?", "Want to play again?")
-        play_again()
-        clicked = True
-    elif third_button['text'] == "O" and fifth_button['text'] == "O" and seventh_button['text'] == "O":
-        messagebox.showinfo("We Got A Winner", "Player 2 Wins!!!")
-        answer = messagebox.askyesno("Play Again?", "Want to play again?")
-        play_again()
-        clicked = True
-    elif seventh_button['text'] == "O" and eight_button['text'] == "O" and ninth_button['text'] == "O":
-        messagebox.showinfo("We Got A Winner", "Player 2 Wins!!!")
-        answer = messagebox.askyesno("Play Again?", "Want to play again?")
-        play_again()
-        clicked = True
+        counter = 0
 
 
 def play_again():
@@ -159,6 +104,7 @@ def enable_buttons():
     ninth_button['state'] = "normal"
 
 
+#----------------------------SETTING UP THE UI-----------------------------------------------#
 x_player = Button(text="X",  fg='red', width=7, height=1)
 x_player.grid(column=1, row=3)
 
